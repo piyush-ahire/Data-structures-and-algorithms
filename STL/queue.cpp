@@ -6,9 +6,9 @@ int main(){
     queue<string> q;
 
     //puqhing elementq in the qtack
-    q.push("Piyush"); //at end
+    q.push("Piyush"); //at top
     q.push("shlok");
-    q.push("Mayur"); //at top
+    q.push("Mayur"); //at end
 
     cout<<"First elemenet is "<<q.front()<<endl;
 
@@ -17,11 +17,6 @@ int main(){
 
     //size
     cout<<"Size after pop is "<<q.size()<<endl;
-
-
-     
-
-    
 
     return 0;
 }

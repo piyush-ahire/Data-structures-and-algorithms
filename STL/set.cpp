@@ -33,7 +33,7 @@ int main(){
     cout<<endl;
     
 
-    //to delete second elelmt
+    //to delete second element
     set<int> :: iterator it = s.begin();
     it++;
     s.erase(it);
