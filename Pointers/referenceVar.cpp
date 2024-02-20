@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+int &func(int a){
+    int num = a;
+    int & ans = num;
+    return ans;
+}
+
 void update(int n){
     n++;
 
@@ -38,6 +44,8 @@ int main(){
     cout<<"Before: "<<n<<endl;
     update1(n);
     cout<<"After: "<<n<<endl; //no change coz it pass by value
+
+    func(n);
 
 
     
