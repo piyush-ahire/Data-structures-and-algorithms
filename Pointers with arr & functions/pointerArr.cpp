@@ -7,7 +7,7 @@ int main(){
     cout<<"Address of first block in arr is: "<<&arr[0]<<endl;
 
     cout<<"Value at first loc "<<*arr<<endl;
-    cout<<"Value at first+1 loc "<<*arr + 1<<endl;
+    cout<<"Value at first+1 loc "<<*arr + 1<<endl; //increase the value
     cout<<"Value at second loc "<<*(arr+1)<<endl;
 
     //same
