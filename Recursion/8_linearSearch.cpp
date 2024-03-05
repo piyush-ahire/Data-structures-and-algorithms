@@ -45,3 +45,6 @@ int main(){
 
     return 0;
 }
+
+
+//Time complexity of this algorithm is O(n), where n is the number of elements in array.
