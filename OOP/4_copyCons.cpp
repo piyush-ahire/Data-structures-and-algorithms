@@ -1,4 +1,5 @@
 #include<iostream>
+#include <cstring>
 using namespace std;
 
 class hero{
@@ -10,16 +11,15 @@ class hero{
     private:
     //char level; //only accessed inside the class coz private
     int health;
-
-
+    
 
     public:
-    int health1;
     char level;
-
+    char *name;
     //constructor
     hero(){
-        cout<<"Constructor called "<<endl;
+        cout<<"Simple Constructor called "<<endl;
+        name = new char[100];
     }
 
     //Parameterised constructor
@@ -34,6 +34,20 @@ class hero{
         this->health = health;
     }
 
+    
+
+    //copy constructor
+    hero (hero &temp){
+
+        char *ch = new char[strlen(temp.name) + 1];
+        strcpy(ch, temp.name);
+        this->name = ch;
+
+
+        cout<<"Copy constructor called "<<endl;
+        this->health = temp.health;
+        this->level - temp.level;
+    }
 
 
 
@@ -42,7 +56,9 @@ class hero{
 
 
     void print(){
-        cout<<"Level is "<<level<<endl;
+        cout<<"Name "<<this->name<<endl;
+        cout<<"Health is "<<this->health<<endl;
+        cout<<"Level is "<<this->level<<endl;
     }
 
    
@@ -65,41 +81,110 @@ class hero{
         level = ch;
     }
 
+
+    void setName(char name[]){
+        strcpy(this->name, name);
+    }
+
+
+
+    //destructor
+    ~hero(){
+        cout<<"Destructor is called "<<endl;
+    }
 };
 
 int main(){
 
+    //static
+    hero a;
+
+    //dynamic
+    hero *b = new hero();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // hero hero1;
+    // hero1.setHealth(1);
+    // hero1.setLevel('A');
+
+    // char name[7] = {"Piyush"};
+    // hero1.setName(name);
+
+ 
+    // //use default copy constructor
+    // hero hero2(hero1);
+     
+
+    // hero1.name[0] = 'A';
+    // hero1.print();
+
+    // cout<<endl;
+    // hero2.print();
+
+    // hero1 = hero2;
+
+    // hero1.print();
+    // hero2.print();
+
+
+
+
+
+    // hero s(70, 'C');
+    
+    // s.print();
+
+    // //copy constructor
+    // hero r(s);
+    // r.print();
+
+
+
+
+
+
+
+
+
+
+
+
+
     //obj created statically
     // cout<<"Hi"<<endl;
-    hero ramesh(10); //when obj created then hero cons automatically called
-    // cout<<"hello"<<endl;
-    //cout<<"Address of ramesh "<<&ramesh<<endl;
-    ramesh.getHealth();
+    // hero ramesh(10); //when obj created then hero cons automatically called
+    // // cout<<"hello"<<endl;
+    // //cout<<"Address of ramesh "<<&ramesh<<endl;
+    // ramesh.getHealth();
 
 
-    ramesh.print();
+    // ramesh.print();
 
 
 
-    //dynamically
-    hero *h = new hero(12); //when obj created then hero cons automatically called
-    h->print();
+    // //dynamically
+    // hero *h = new hero(12); //when obj created then hero cons automatically called
+    // h->print();
     
-    hero temp(22, 'B');
-    temp.print();
+    // hero temp(22, 'B');
+    // temp.print();
 
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
     // //static allocation - in stack
     // hero a;
