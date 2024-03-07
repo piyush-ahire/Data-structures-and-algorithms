@@ -42,7 +42,7 @@ int main(){
     cout<<endl;
 
     C obj3;
-    obj2.func1();
+    obj3.func1();
     obj3.func3();
  
     return 0;
