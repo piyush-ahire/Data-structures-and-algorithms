@@ -41,6 +41,40 @@ void InsertAtTail(Node* &tail, int d){
     //tail = tail->next;
 }
 
+
+//Insertion at a given position
+void InsertInBetween(Node* &tail, Node* &head, int pos, int d){
+    //started from head so can't isert to first pos so
+    if(pos == 1){
+        InsertAtHead(head, d);
+        return;
+    }
+    Node* temp = head;
+
+    int cnt = 1;
+
+    while(cnt<pos-1){
+        temp = temp->next;
+        cnt++;
+    }
+
+    //insertion at tail, then tail should be updated
+    if(temp->next == NULL){
+        InsertAtTail(tail, d);
+        return;
+    }
+
+    //Creating node for d
+    Node* nodeToInsert = new Node(d);
+
+    nodeToInsert->next = temp->next;
+
+    temp->next = nodeToInsert;
+
+
+}
+
+
 //Traverse a linked list
 void print(Node* &head){
     Node* temp = head;
@@ -85,5 +119,37 @@ int main(){
     InsertAtTail(tail, 16);
     InsertAtTail(tail, 17);
     print(head);
+    cout<<endl;
+
+    //insertio at any position
+    InsertAtTail(tail, 18);
+    print(head);
+    cout<<endl;
+
+    cout<<"Insert in between 16 and 17 "<<endl;
+    InsertInBetween(tail, head, 5, 22);
+    print(head);
+    cout<<endl;
+
+    cout<<"Insertion at the start "<<endl;
+    InsertInBetween(tail, head, 1, 2);
+    print(head);
+    cout<<endl;
+
+
+    //Verify head and tail
+    cout<<"Head is "<<head->data<<endl;
+    cout<<"Tail is "<<tail->data<<endl;
+    cout<<endl;
+
+    cout<<"Insertion at the end "<<endl;
+    InsertInBetween(tail, head, 9, 24);
+    print(head);
+    cout<<endl;
+
+     cout<<"Head is "<<head->data<<endl;
+    cout<<"Tail is "<<tail->data<<endl;
+    cout<<endl;
+
     return 0;
 }
