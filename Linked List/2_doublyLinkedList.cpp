@@ -13,6 +13,18 @@ class Node{
         this->prev = NULL;
         this->next = NULL;
     }
+
+
+    //Destructor
+    ~Node(){
+        int val = this->data;
+
+        if(next != NULL){
+            delete next;
+            next = NULL;
+        }
+        cout<<"Memory free for node with data "<<val<<endl;
+    }
 };
 
 //print the linked list
@@ -92,6 +104,48 @@ void insertAtPos(Node* &tail, Node* &head, int pos, int d){
 
 }
 
+
+//Deletion in doubly linked list
+void deleteNode(int pos, Node* &head, Node* &tail){
+
+    //deleting the first node
+    if(pos == 1){
+        Node* temp = head;
+
+        temp->next->prev = NULL;
+
+        head = temp->next;
+
+        temp->next = NULL;
+
+        delete temp;
+    }
+    else{
+
+        //deleting any middle node or last node
+        Node* curr = head;
+        Node* prev = NULL;
+
+        int cnt = 1;
+
+        while(cnt<pos){
+            prev = curr;
+
+            curr = curr->next;
+            cnt++;
+        }
+
+    
+        curr->prev = NULL;
+        prev->next = curr->next;
+        curr->next  = NULL;
+     
+        delete curr;
+    }
+    
+}
+
+
 int main(){
 
     Node* node1 = new Node(10);
@@ -113,13 +167,27 @@ int main(){
     print(head);
     cout<<endl;
 
+    insertAtTail(tail,9);
+    print(head);
+    cout<<endl;
+
 
     //Insertion in between
 
     insertAtPos(tail, head, 2, 100);
     print(head);
+    cout<<"head is "<<head->data<<endl;
+    cout<<"Tail is "<<tail->data<<endl;
     cout<<endl;
 
 
+    //Deletion in linked list
+    deleteNode(5, head, tail);
+    print(head);
+    cout<<"head is "<<head->data<<endl;
+    cout<<"Tail is "<<tail->data<<endl;
+    cout<<endl;
+
+    
     return 0;
 }
