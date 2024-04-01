@@ -55,7 +55,7 @@ void InsertAtTail(Node* &tail, int d){
 
 //Insertion at a given position
 void InsertInBetween(Node* &tail, Node* &head, int pos, int d){
-    //started from head so can't isert to first pos so
+    //started from head so can't insert to first pos 
     if(pos == 1){
         InsertAtHead(head, d);
         return;
@@ -123,9 +123,6 @@ void deleteNode(int pos, Node* &head){
 
 
 
-
-
-
 //Traverse a linked list
 void print(Node* &head){
     Node* temp = head;
@@ -136,6 +133,8 @@ void print(Node* &head){
     }
     cout<<endl;
 }
+
+
 
 int main(){
 
