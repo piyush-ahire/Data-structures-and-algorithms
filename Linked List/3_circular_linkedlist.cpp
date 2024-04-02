@@ -74,7 +74,7 @@ void print(Node* tail){
 }
 
 void print1(Node* tail){
-    Node *curr = tail->next;
+    Node* curr = tail->next;
     cout<<tail->data<<" ";
 
     while(curr != tail) {

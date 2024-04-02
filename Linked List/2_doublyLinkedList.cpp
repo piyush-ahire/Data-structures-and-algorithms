@@ -51,6 +51,7 @@ int getLength(Node* head){
     return len;
 }
 
+
 //To insert at head
 void insertAtHead(Node* &head, int d){
 
@@ -125,6 +126,7 @@ void deleteNode(int pos, Node* &head, Node* &tail){
         //deleting any middle node or last node
         Node* curr = head;
         Node* prev = NULL;
+        
 
         int cnt = 1;
 
