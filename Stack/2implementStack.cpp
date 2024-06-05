@@ -8,7 +8,7 @@ class Stack{
         int *arr;
         int top;
         int size;
-
+        
 
     //behavior
     Stack(int size){
@@ -66,6 +66,9 @@ int main(){
     st.push(22);
     st.push(43);
     st.push(44);
+    // st.push(41);
+    // st.push(46);
+    // st.push(44);  stack overflow
 
     cout<<st.peek()<<endl;
 
@@ -77,6 +80,15 @@ int main(){
 
     st.pop();
     cout<<st.peek()<<endl;
+
+
+    //empty or not
+    if(st.isEmpty()){
+        cout<<"Stack is empty "<<endl;
+    }
+    else{
+        cout<<"Stack is not empty "<<endl;
+    }
 
     return 0;
 }
