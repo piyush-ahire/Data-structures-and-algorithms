@@ -5,7 +5,7 @@ int main(){
     //A - 65 , a - 97,  7-bit char set contains 128 chars
     char ch = 'A';
     char newLinechar  = '\n';
-    //char ch = "A";  this will give an error coz chat stores in single quotes
+    //char ch = "A";  this will give an error coz char stores in single quotes
     cout<<ch<<newLinechar<<endl;
 
     cout<<sizeof(char)<<endl;
