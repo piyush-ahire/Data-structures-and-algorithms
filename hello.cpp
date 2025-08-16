@@ -18,6 +18,9 @@ int main () {
    for ( int j = 0; j < 10; j++ ) {
       cout << setw( 7 )<< j << setw( 13 ) << n[ j ] << endl;
    }
+
+
+   
  
    return 0;
 }
